@@ -1,0 +1,22 @@
+{
+    "name": "carry0987/redis-tool",
+    "description": "A library for easily manipulating phpredis",
+    "keywords": ["redis"],
+    "type": "library",
+    "require": {
+        "php": ">=7.2"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "carry0987\\Redis\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "carry0987"
+        }
+    ],
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
