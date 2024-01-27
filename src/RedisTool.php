@@ -27,7 +27,7 @@ class RedisTool
             if ($count >= $this->retryTimes) {
                 throw new Exception('Unable to connect to Redis');
             }
-            $this->redis->auth($pwd);
+            if ($pwd !== null) $this->redis->auth($pwd);
             $this->redis->select($database);
         } catch (RedisException $e) {
             throw new Exception($e->getMessage());
@@ -38,7 +38,7 @@ class RedisTool
     {
         $host = $config['host'] ?? '127.0.0.1';
         $port = $config['port'] ?? 6379;
-        $pwd = $config['pwd'] ?? null;
+        $pwd = $config['password'] ?? null;
         $database = $config['database'] ?? 0;
 
         return [$host, $port, $pwd, $database];
