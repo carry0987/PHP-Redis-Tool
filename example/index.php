@@ -10,7 +10,7 @@ $config = array(
     'database' => '0'
 );
 
-$redis = new RedisTool($config['host'], $config['port'], $config['pwd'], $config['database']);
+$redis = new RedisTool($config);
 
 $redis->setValue('test', 'test');
 var_dump($redis->getValue('test'));
