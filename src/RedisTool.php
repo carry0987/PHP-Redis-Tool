@@ -6,7 +6,7 @@ use RedisException;
 
 class RedisTool
 {
-    private $redis = null;
+    private \Redis $redis;
     private $retryTimes;
 
     public function __construct(array $config, int $retryTimes = 3)
